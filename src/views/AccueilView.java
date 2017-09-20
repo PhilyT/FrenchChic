@@ -3,8 +3,8 @@ package views;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridLayout;
 
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -60,33 +60,38 @@ public class AccueilView extends AbstractView {
 		
 		JLabel label1 = new JLabel();
 		label1.setText("Pseudo");
+		label1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 20));
 		JTextField text1 = new JTextField(15);
 		text1.setMaximumSize( new Dimension( 240, 24 ) );
 
 		JLabel label2 = new JLabel();
 		label2.setText("Mot de passe");
+		label2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		JPasswordField  text2 = new JPasswordField(15);
 		text2.setMaximumSize( new Dimension( 240, 24 ) );
 		 
 		JButton SUBMIT=new JButton("S'identifier");
-
+		
 		JPanel b1 = new JPanel();
+		b1.setBorder(BorderFactory.createEmptyBorder(20, 10, 20, 10));
 	    b1.setLayout(new BoxLayout(b1, BoxLayout.LINE_AXIS));
 	    b1.add(title);
 
 
 	    JPanel b2 = new JPanel();
+	    b2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 	    b2.setLayout(new BoxLayout(b2, BoxLayout.LINE_AXIS));
 	    b2.add(label1);
 	    b2.add(text1);
 
-
 	    JPanel b3 = new JPanel();
+	    b3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 	    b3.setLayout(new BoxLayout(b3, BoxLayout.LINE_AXIS));
 	    b3.add(label2);
 	    b3.add(text2);
 	    
 	    JPanel b4 = new JPanel();
+	    b4.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 	    b4.setLayout(new BoxLayout(b4, BoxLayout.LINE_AXIS));
 	    b4.add(SUBMIT);
 
