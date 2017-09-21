@@ -1,6 +1,7 @@
 package com.mbds.controllers;
 
 import com.mbds.models.AbstractModel;
+import com.mbds.views.EnumTypeEcran;
 
 /**
  * Home Controller
@@ -22,8 +23,8 @@ public class Session extends AbstractController{
 	}
 	
 
-	public boolean traiterConnexion(){
-		return true;
+	public EnumTypeEcran traiterConnexion(){
+		return EnumTypeEcran.Ecran_Accueil;
 	}
 	
 	

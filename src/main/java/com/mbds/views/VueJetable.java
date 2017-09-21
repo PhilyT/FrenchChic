@@ -48,7 +48,7 @@ public class VueJetable extends AbstractView {
 	    this.setLocationRelativeTo(null);
 
 	    this.setResizable(false);
-	    if(accueilController.traiterConnexion()){
+	    if(accueilController.traiterConnexion().equals(EnumTypeEcran.Ecran_Accueil)){
 	    	initComposant(); 
 	    }
 
