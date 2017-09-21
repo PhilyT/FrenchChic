@@ -15,7 +15,7 @@
         <configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.mbds.views.AccueilView</mainClass>
+							<mainClass>com.mbds.views.VueJetable</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
