@@ -24,7 +24,7 @@ import com.mbds.models.AbstractModel;
  * @author Tom
  *
  */
-public class AccueilView extends AbstractView {
+public class VueJetable extends AbstractView {
 	
 	/**
 	 * 
@@ -36,7 +36,7 @@ public class AccueilView extends AbstractView {
 	 * Constructor
 	 * @param controller
 	 */
-	public AccueilView(Session controller) {
+	public VueJetable(Session controller) {
 		accueilController = controller;
 		
 		this.setSize(400, 400);
@@ -112,7 +112,7 @@ public class AccueilView extends AbstractView {
 	
 	public static void main(String[] args){
 		Session controller = new Session(new AbstractModel(){});
-		AccueilView view = new AccueilView(controller);
+		VueJetable view = new VueJetable(controller);
 		
 	}
 
