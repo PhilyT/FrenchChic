@@ -13,9 +13,11 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+
 import com.mbds.controllers.AbstractController;
-import com.mbds.controllers.AccueilController;
+import com.mbds.controllers.Session;
 import com.mbds.models.AbstractModel;
+
 
 /**
  * Home View
@@ -106,7 +108,7 @@ public class AccueilView extends AbstractView {
 	}
 	
 	public static void main(String[] args){
-		AccueilController controller = new AccueilController(new AbstractModel(){});
+		Session controller = new Session(new AbstractModel(){});
 		AccueilView view = new AccueilView(controller);
 		
 	}

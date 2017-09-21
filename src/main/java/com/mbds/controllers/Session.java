@@ -7,7 +7,7 @@ import com.mbds.models.AbstractModel;
  * @author Tom
  *
  */
-public class AccueilController extends AbstractController{
+public class Session extends AbstractController{
 	/**
 	 * 
 	 */
@@ -17,7 +17,7 @@ public class AccueilController extends AbstractController{
 	 * Constructor
 	 * @param model
 	 */
-	public AccueilController(AbstractModel model){
+	public Session(AbstractModel model){
 		accueilModel = model;
 	}
 	
