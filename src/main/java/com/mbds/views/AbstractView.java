@@ -1,4 +1,4 @@
-package views;
+package com.mbds.views;
 
 import javax.swing.JFrame;
 

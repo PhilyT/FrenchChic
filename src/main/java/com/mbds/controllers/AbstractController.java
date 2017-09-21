@@ -1,4 +1,4 @@
-package controllers;
+package com.mbds.controllers;
 
 /**
  * Abstract class fo controller

@@ -1,4 +1,4 @@
-package views;
+package com.mbds.views;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -13,9 +13,9 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import controllers.AbstractController;
-import controllers.AccueilController;
-import models.AbstractModel;
+import com.mbds.controllers.AbstractController;
+import com.mbds.controllers.AccueilController;
+import com.mbds.models.AbstractModel;
 
 /**
  * Home View

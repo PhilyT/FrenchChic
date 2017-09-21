@@ -1,4 +1,4 @@
-package models;
+package com.mbds.models;
 
 /**
  * Abstract class for models

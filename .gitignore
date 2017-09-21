@@ -2,3 +2,5 @@
 .project
 .settings/
 bin/
+target/
+AppliVentesStock-jar-with-dependencies.jar

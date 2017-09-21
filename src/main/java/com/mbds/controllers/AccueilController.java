@@ -1,6 +1,6 @@
-package controllers;
+package com.mbds.controllers;
 
-import models.AbstractModel;
+import com.mbds.models.AbstractModel;
 
 /**
  * Home Controller
