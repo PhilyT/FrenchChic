@@ -21,7 +21,10 @@ public class Session extends AbstractController{
 		accueilModel = model;
 	}
 	
-	
+
+	public boolean traiterConnexion(){
+		return true;
+	}
 	
 	
 }

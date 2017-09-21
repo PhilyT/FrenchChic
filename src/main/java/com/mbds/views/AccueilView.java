@@ -30,13 +30,13 @@ public class AccueilView extends AbstractView {
 	 * 
 	 */
 	private static final long serialVersionUID = 8052797855953687730L;
-	private AbstractController accueilController;
+	private Session accueilController;
 	
 	/**
 	 * Constructor
 	 * @param controller
 	 */
-	public AccueilView(AbstractController controller) {
+	public AccueilView(Session controller) {
 		accueilController = controller;
 		
 		this.setSize(400, 400);
@@ -48,8 +48,11 @@ public class AccueilView extends AbstractView {
 	    this.setLocationRelativeTo(null);
 
 	    this.setResizable(false);
+	    if(accueilController.traiterConnexion()){
+	    	initComposant(); 
+	    }
 
-	    initComposant();                               
+	                                  
 
 	    this.setVisible(true);
 	}
