@@ -1,4 +1,4 @@
-package com.mbds.views;
+package com.mbds.controllers;
 
 public enum EnumTypeEcran {
 	Ecran_Accueil

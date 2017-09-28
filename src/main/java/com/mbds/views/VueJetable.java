@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-
+import com.mbds.controllers.EnumTypeEcran;
 import com.mbds.controllers.Session;
 
 
@@ -28,14 +28,14 @@ public class VueJetable extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 8052797855953687730L;
-	private Session accueilController;
+
 	
 	/**
 	 * Constructor
 	 * @param controller
 	 */
-	public VueJetable(Session controller) {
-		accueilController = controller;
+	public VueJetable() {
+		Session accueilController = new Session();
 		
 		this.setSize(400, 400);
 
@@ -109,8 +109,7 @@ public class VueJetable extends JFrame {
 	}
 	
 	public static void main(String[] args){
-		Session controller = new Session();
-		VueJetable view = new VueJetable(controller);
+		VueJetable view = new VueJetable();
 		
 	}
 

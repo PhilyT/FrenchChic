@@ -1,8 +1,5 @@
 package com.mbds.controllers;
 
-
-import com.mbds.views.EnumTypeEcran;
-
 /**
  * Home Controller
  * @author Tom
