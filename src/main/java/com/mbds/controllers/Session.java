@@ -1,6 +1,6 @@
 package com.mbds.controllers;
 
-import com.mbds.models.AbstractModel;
+
 import com.mbds.views.EnumTypeEcran;
 
 /**
@@ -8,18 +8,17 @@ import com.mbds.views.EnumTypeEcran;
  * @author Tom
  *
  */
-public class Session extends AbstractController{
+public class Session {
 	/**
 	 * 
 	 */
-	private AbstractModel accueilModel;
+	
 	
 	/**
 	 * Constructor
-	 * @param model
 	 */
-	public Session(AbstractModel model){
-		accueilModel = model;
+	public Session(){
+
 	}
 	
 

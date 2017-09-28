@@ -14,9 +14,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 
-import com.mbds.controllers.AbstractController;
 import com.mbds.controllers.Session;
-import com.mbds.models.AbstractModel;
 
 
 /**
@@ -24,7 +22,7 @@ import com.mbds.models.AbstractModel;
  * @author Tom
  *
  */
-public class VueJetable extends AbstractView {
+public class VueJetable extends JFrame {
 	
 	/**
 	 * 
@@ -111,7 +109,7 @@ public class VueJetable extends AbstractView {
 	}
 	
 	public static void main(String[] args){
-		Session controller = new Session(new AbstractModel(){});
+		Session controller = new Session();
 		VueJetable view = new VueJetable(controller);
 		
 	}
