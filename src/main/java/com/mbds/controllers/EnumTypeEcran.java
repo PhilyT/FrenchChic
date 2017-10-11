@@ -1,5 +1,6 @@
 package com.mbds.controllers;
 
 public enum EnumTypeEcran {
-	Ecran_Accueil
+	Ecran_Accueil,
+	ECRAN_PANIER
 }
