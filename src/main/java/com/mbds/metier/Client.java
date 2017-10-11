@@ -1,4 +1,4 @@
-package com.mbds.views;
+package com.mbds.metier;
 
 public class Client {
 	
