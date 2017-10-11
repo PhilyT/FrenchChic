@@ -1,7 +1,7 @@
 
 package com.mbds.controllers;
 
-import com.mbds.views.Client;
+import com.mbds.metier.Client;
 
 /**
  * Home Controller
