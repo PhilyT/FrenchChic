@@ -14,9 +14,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 import com.mbds.controllers.EnumTypeEcran;
+import com.mbds.controllers.Panier;
 import com.mbds.controllers.Session;
 
 /**
@@ -134,6 +136,47 @@ public class VueJetable extends JFrame {
 				b5.remove(comp);
 			}
 		}
+	}
+	
+	private void affichagePanier(){
+		
+		int i= 5;
+		
+		Panier panier = new Panier();
+		
+		if(panier.ajoutProduit(i).equals(EnumTypeEcran.ECRAN_PANIER)){
+			removeComposant();
+			title.setText("Votre Panier");
+			
+			JLabel label2 = new JLabel();
+			label2.setText("Montant panier");
+			label2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+			JTextField text2 = new JTextField(15);
+			text2.setMaximumSize(new Dimension(240, 24));
+			
+			Object[][] donnees = {  
+					    
+					} ;
+			String[] titreColonnes = { 
+					   "Libellé","PRix HT", "Quantité",
+					   "Montant"}; 
+			JTable jTable1 = new JTable(
+					      donnees, titreColonnes);
+			
+			JPanel b2 = new JPanel();
+			b2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+			b2.add(jTable1);
+			
+			JPanel b3 = new JPanel();
+			b3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+			b3.setLayout(new BoxLayout(b3, BoxLayout.LINE_AXIS));
+			b3.add(label2);
+			b3.add(text2);
+			
+			
+			b5.add(b2);
+			b5.add(b3);
+		}		
 	}
 
 	public static void main(String[] args) {
