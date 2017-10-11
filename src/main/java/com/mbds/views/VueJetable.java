@@ -57,6 +57,9 @@ public class VueJetable extends JFrame {
 			initComposant();
 		}
 
+		// debug
+		affichageAccueilPerso();
+
 		this.setVisible(true);
 	}
 
@@ -113,8 +116,38 @@ public class VueJetable extends JFrame {
 		// clean des conmposants inutiles pour l'accueil perso
 		removeComposant();
 
-		// TODO : ajouter les composants attendus
-		// b5.add(); 
+		JLabel greeting = new JLabel("Bonjour ");
+		JLabel annonceProduitJour = new JLabel("Le produit du jour est le au prix HT de ");
+		JLabel labelQuantite = new JLabel("Quantite ");
+		JTextField quantite = new JTextField();
+		JButton ajouterProduit = new JButton("Ajouter le produit du jour au panier");
+		quantite.setMaximumSize(new Dimension(50, 24));
+
+		JPanel b1 = new JPanel();
+		b1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		b1.setLayout(new BoxLayout(b1, BoxLayout.X_AXIS));
+		b1.add(greeting);
+
+		JPanel b2 = new JPanel();
+		b2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		b2.setLayout(new BoxLayout(b2, BoxLayout.X_AXIS));
+		b2.add(annonceProduitJour);
+
+		JPanel b3 = new JPanel();
+		b3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		b3.setLayout(new BoxLayout(b3, BoxLayout.X_AXIS));
+		b3.add(labelQuantite);
+		b3.add(quantite);
+
+		JPanel ajouterProduitPane = new JPanel();
+		ajouterProduitPane.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+		ajouterProduitPane.setLayout(new BoxLayout(ajouterProduitPane, BoxLayout.X_AXIS));
+		ajouterProduitPane.add(ajouterProduit);
+
+		b5.add(b1);
+		b5.add(b2);
+		b5.add(b3);
+		b5.add(ajouterProduitPane);
 
 		this.getContentPane().add(b5);
 	}
