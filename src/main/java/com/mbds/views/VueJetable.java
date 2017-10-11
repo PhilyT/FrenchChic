@@ -60,7 +60,7 @@ public class VueJetable extends JFrame {
 		}
 
 		// debug
-		affichageAccueilPerso();
+		// affichageAccueilPerso();
 
 		this.setVisible(true);
 	}
@@ -82,12 +82,10 @@ public class VueJetable extends JFrame {
 		text2.setMaximumSize(new Dimension(240, 24));
 
 		JButton SUBMIT = new JButton("S'identifier");
-		SUBMIT.addActionListener(new ActionListener()
-		{
-		  public void actionPerformed(ActionEvent e)
-		  {
-		    affichageAccueilPerso();
-		  }
+		SUBMIT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				affichageAccueilPerso();
+			}
 		});
 
 		b1.setBorder(BorderFactory.createEmptyBorder(20, 10, 20, 10));
