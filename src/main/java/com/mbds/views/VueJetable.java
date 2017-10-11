@@ -157,6 +157,8 @@ public class VueJetable extends JFrame {
 		b5.add(b2);
 		b5.add(b3);
 		b5.add(ajouterProduitPane);
+		b5.revalidate();
+		b5.repaint();
 
 		this.getContentPane().add(b5);
 	}
@@ -207,6 +209,8 @@ public class VueJetable extends JFrame {
 			
 			b5.add(b2);
 			b5.add(b3);
+			b5.revalidate();
+			b5.repaint();
 		}		
 	}
 
