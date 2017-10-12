@@ -1,6 +1,8 @@
 
 package com.mbds.controllers;
 
+import java.util.Map;
+
 import com.mbds.metier.Client;
 
 /**
@@ -26,8 +28,15 @@ public class Session {
 		return EnumTypeEcran.Ecran_Accueil;
 	}
 	
-	public EnumTypeEcran TraiterIdentification (String pseudo, String mdp) {
-		return EnumTypeEcran.Ecran_Accueil;
+	public ResultClient TraiterIdentification (String pseudo, char[] mdp) {
+		
+		EnumTypeEcran typeEcran = EnumTypeEcran.ECRAN_ACCUEIL_PERSO;
+
+		Client leClient = Client.rechercherClientParPseudo(pseudo, mdp);
+		
+		ResultClient resultClient = new ResultClient(typeEcran, leClient);
+		
+		return resultClient;
 			
 	}
 	public Client rechercherClientParPseudo(String _pseudo, String _motDePasse) {

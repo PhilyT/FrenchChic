@@ -1,5 +1,7 @@
 package com.mbds.metier;
 
+import java.util.Arrays;
+
 public class Client {
 	
 	String nom;
@@ -12,6 +14,33 @@ public class Client {
 		this.motDePasse=_mdp;
 		}
 	
+	public static Client rechercherClientParPseudo(String pseudo, char[] mdp) {
+		Client clientDeTest = new Client("User", "root");
+		clientDeTest.setNom("Dupond");
+		clientDeTest.setPrenom("Marie");
+		
+		
+		if (pseudo.equals(clientDeTest.getPseudo()) & isPasswordCorrect(mdp)) {
+			return clientDeTest;
+		}
+		return null;
+	}
+	
+	private static boolean isPasswordCorrect(char[] input) {
+	    boolean isCorrect = true;
+	    char[] correctPassword = { 'r', 'o', 'o', 't' };
+
+	    if (input.length != correctPassword.length) {
+	        isCorrect = false;
+	    } else {
+	        isCorrect = Arrays.equals (input, correctPassword);
+	    }
+
+	    //Zero out the password.
+	    Arrays.fill(correctPassword,'0');
+
+	    return isCorrect;
+	}
 	
 	public String getNom() {
 		return nom;

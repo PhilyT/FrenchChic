@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 
 import com.mbds.controllers.EnumTypeEcran;
 import com.mbds.controllers.Panier;
+import com.mbds.controllers.ResultClient;
 import com.mbds.controllers.Session;
 
 /**
@@ -39,14 +40,21 @@ public class VueJetable extends JFrame {
 	private JPanel b1 = new JPanel();
 	// master panel
 	private JPanel b5 = new JPanel();
+	
+	private JTextField pseudo;
+	private JPasswordField mdp;
+	
+	private JLabel greeting;
+	private ResultClient res;
+	
+	private Session accueilController;
 
 	/**
 	 * Constructor
 	 * 
-	 * @param controller
 	 */
 	public VueJetable() {
-		Session accueilController = new Session();
+		accueilController = new Session();
 
 		this.setSize(400, 400);
 
@@ -61,9 +69,6 @@ public class VueJetable extends JFrame {
 			initComposant();
 		}
 
-		// debug
-		// affichageAccueilPerso();
-
 		this.setVisible(true);
 	}
 
@@ -74,21 +79,17 @@ public class VueJetable extends JFrame {
 		JLabel label1 = new JLabel();
 		label1.setText("Pseudo");
 		label1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 20));
-		JTextField text1 = new JTextField(15);
-		text1.setMaximumSize(new Dimension(240, 24));
+		pseudo = new JTextField(15);
+		pseudo.setMaximumSize(new Dimension(240, 24));
 
 		JLabel label2 = new JLabel();
 		label2.setText("Mot de passe");
 		label2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-		JPasswordField text2 = new JPasswordField(15);
-		text2.setMaximumSize(new Dimension(240, 24));
+		mdp = new JPasswordField(15);
+		mdp.setMaximumSize(new Dimension(240, 24));
 
 		JButton SUBMIT = new JButton("S'identifier");
-		SUBMIT.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				affichageAccueilPerso();
-			}
-		});
+
 
 		b1.setBorder(BorderFactory.createEmptyBorder(20, 10, 20, 10));
 		b1.setLayout(new BoxLayout(b1, BoxLayout.LINE_AXIS));
@@ -98,13 +99,13 @@ public class VueJetable extends JFrame {
 		b2.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		b2.setLayout(new BoxLayout(b2, BoxLayout.LINE_AXIS));
 		b2.add(label1);
-		b2.add(text1);
+		b2.add(pseudo);
 
 		JPanel b3 = new JPanel();
 		b3.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 		b3.setLayout(new BoxLayout(b3, BoxLayout.LINE_AXIS));
 		b3.add(label2);
-		b3.add(text2);
+		b3.add(mdp);
 
 		JPanel b4 = new JPanel();
 		b4.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -118,19 +119,39 @@ public class VueJetable extends JFrame {
 		b5.add(b4);
 
 		this.getContentPane().add(b5);
+		
+		SUBMIT.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				affichageAccueilPerso(pseudo.getText(), mdp.getPassword());
+			}
+		});
 	}
 
-	private void affichageAccueilPerso() {
+	private void affichageAccueilPerso(String pseudo, char[] mdp) {
 
 		// clean des conmposants inutiles pour l'accueil perso
 		removeComposant();
 
-		JLabel greeting = new JLabel("Bonjour ");
+		greeting = new JLabel("Bonjour ");
 		JLabel annonceProduitJour = new JLabel("Le produit du jour est le au prix HT de ");
 		JLabel labelQuantite = new JLabel("Quantite ");
 		JTextField quantite = new JTextField();
-		JButton ajouterProduit = new JButton("Ajouter le produit du jour au panier");
 		quantite.setMaximumSize(new Dimension(50, 24));
+		JButton ajouterProduit = new JButton("Ajouter le produit du jour au panier");
+		
+		res = accueilController.TraiterIdentification(pseudo, mdp);
+		
+		if (res.getClient() != null) {
+			greeting.setText(greeting.getText() + res.getClient().getPrenom() + " " +  res.getClient().getNom());
+		}
+		
+		ajouterProduit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (res.getTypeEcran().equals(EnumTypeEcran.Ecran_Accueil)) {
+					affichagePanier();
+				}
+			}
+		});
 
 		JPanel b1 = new JPanel();
 		b1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -191,7 +212,7 @@ public class VueJetable extends JFrame {
 					    
 					} ;
 			String[] titreColonnes = { 
-					   "Libellé","PRix HT", "Quantité",
+					   "Libellï¿½","PRix HT", "Quantitï¿½",
 					   "Montant"}; 
 			JTable jTable1 = new JTable(
 					      donnees, titreColonnes);
